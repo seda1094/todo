@@ -1,0 +1,18 @@
+<nb-card status="success">
+    <nb-card-header>SignIn</nb-card-header>
+    <nb-card-body>
+        <form (ngSubmit)='onSignIp(myForm)' #myForm="ngForm">
+            <br>
+            <input type="text" nbInput fullWidth #email="ngModel" status="Default" placeholder="email" name="email" ngModel email required >
+            <br>
+            <br>
+            <input type="password" nbInput fullWidth status="Default" placeholder="password" name="password" ngModel password required>
+
+            <p *ngIf="!myForm.valid && email.touched" style="color: tomato; margin: 20px 0 -20px 0; padding: 0">Please enter correct fields</p>
+            <br>
+            <br>
+            <button type="submit" nbButton [disabled]="!myForm.valid">Sign In</button>
+            </form>
+    </nb-card-body>
+    <nb-card-footer>⚡⚡</nb-card-footer>
+</nb-card>
